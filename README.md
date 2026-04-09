@@ -50,7 +50,8 @@ Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azu
 - You must toggle "Allow public client flows" to "yes".
 
 <img width="1002" height="614" alt="immagine" src="https://github.com/user-attachments/assets/50ddfc5d-2dfb-4826-a7c1-11c27a381dcc" />
-
+<br />
+<br />
 - Be sure to select the appropriate type of account (consumer Outlook vs. "organizational directory") -- see #89 for why.
 
 Then, add API permissions for SMTP.Send:
