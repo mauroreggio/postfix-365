@@ -47,18 +47,15 @@ Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azu
 
 - Use any name you like (it doesn't have to be "sasl-xoauth2").
 - Be sure to select the appropriate type of account (consumer Outlook vs. "organizational directory") -- see #89 for why.
+<br />
+<img width="949" height="422" alt="immagine" src="https://github.com/user-attachments/assets/bd34cd18-898f-4c3d-a456-d9e72468a543" />
+<br />
+<br />
+- Add "Delegated App" - "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient <br />
+- After, you must go to WebApp Settings and adjust as follow.<br />
 
-<img width="849" height="201" alt="immagine" src="https://github.com/user-attachments/assets/eb5aa2a9-9c19-455c-8163-b107663c16a5" />
+<img width="1004" height="643" alt="immagine" src="https://github.com/user-attachments/assets/65cdb6dc-f50c-4c11-9118-e00c40627a4a" />
 
-<br />
-<br />
-(Note that we cannot specify that option after the app is registered already)
-<br />
-<br />
-- Add "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient <br />
-- After, you must go to WebApp Settings and toggle "Allow public client flows" to "yes".
-
-<img width="1002" height="614" alt="immagine" src="https://github.com/user-attachments/assets/50ddfc5d-2dfb-4826-a7c1-11c27a381dcc" />
 <br />
 <br />
 Then, add API permissions for SMTP.Send:
