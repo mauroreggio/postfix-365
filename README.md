@@ -43,7 +43,7 @@ If msal not found into the container, install it: <br />
 yum install pip -y
 pip install azure-cli
 ```
-Special instruction for Azure App creation:
+Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application):
 
 - Use any name you like (it doesn't have to be "sasl-xoauth2").
 - Add "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient
