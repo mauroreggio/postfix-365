@@ -60,7 +60,8 @@ Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azu
 <br />
 <br />
 - Add "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient
-
+<br />
+<br />
 Then, add API permissions for SMTP.Send:
 
 - From the app registration "API permissions" page, click "add a permission".
