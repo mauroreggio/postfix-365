@@ -46,7 +46,6 @@ pip install azure-cli
 Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application):
 
 - Use any name you like (it doesn't have to be "sasl-xoauth2").
-- Add "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient
 - Be sure to select the appropriate type of account (consumer Outlook vs. "organizational directory") -- see #89 for why.
 
 <img width="849" height="201" alt="immagine" src="https://github.com/user-attachments/assets/eb5aa2a9-9c19-455c-8163-b107663c16a5" />
@@ -60,7 +59,7 @@ Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azu
 <img width="1002" height="614" alt="immagine" src="https://github.com/user-attachments/assets/50ddfc5d-2dfb-4826-a7c1-11c27a381dcc" />
 <br />
 <br />
-
+- Add "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient
 
 Then, add API permissions for SMTP.Send:
 
