@@ -53,13 +53,12 @@ Special instruction for Azure App creation (https://docs.microsoft.com/en-us/azu
 <br />
 <br />
 (Note that we cannot specify that option after the app is registered already)
-
-- You must toggle "Allow public client flows" to "yes".
-
-<img width="1002" height="614" alt="immagine" src="https://github.com/user-attachments/assets/50ddfc5d-2dfb-4826-a7c1-11c27a381dcc" />
 <br />
 <br />
 - Add "Web Application" with this redirected URI: https://login.microsoftonline.com/common/oauth2/nativeclient
+- You must toggle "Allow public client flows" to "yes".
+
+<img width="1002" height="614" alt="immagine" src="https://github.com/user-attachments/assets/50ddfc5d-2dfb-4826-a7c1-11c27a381dcc" />
 <br />
 <br />
 Then, add API permissions for SMTP.Send:
