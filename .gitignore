@@ -1,0 +1,9 @@
+# Runtime data: certificates, OAuth2 tokens and saved settings contain secrets.
+certs/*
+tokens/*
+config/*
+!*/.gitkeep
+
+# Python bytecode
+__pycache__/
+*.pyc
