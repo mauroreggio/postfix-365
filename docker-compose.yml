@@ -4,6 +4,11 @@ services:
     # build: .                 # uncomment to build the image locally
     container_name: postfix
     restart: unless-stopped
+    logging:                   # keep "docker logs" from filling the disk
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "25:25"
       # - "587:587"            # submission (STARTTLS), needs SMTPD_USERS
