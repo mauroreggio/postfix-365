@@ -1,0 +1,8 @@
+; Copied to webui.ini by the entrypoint when WEBUI_ENABLED=true.
+[program:webui]
+command=/usr/bin/python3 -I /webui/app.py
+priority=20
+autorestart=true
+stdout_logfile=/dev/fd/1
+stdout_logfile_maxbytes=0
+redirect_stderr=true

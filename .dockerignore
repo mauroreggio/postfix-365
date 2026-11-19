@@ -1,0 +1,8 @@
+.git
+.github
+certs
+keys
+tokens
+config
+*.md
+__pycache__

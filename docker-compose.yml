@@ -1,26 +1,36 @@
 services:
   postfix:
-    image: ghcr.io/mauroreggio/postfix-365:1.0.0
-#    network_mode: "host"
+    image: ghcr.io/mauroreggio/postfix-365:latest
+    # build: .                 # uncomment to build the image locally
+    container_name: postfix
+    restart: unless-stopped
     ports:
       - "25:25"
-#      - "587:587"
-#      - "465:465"
+      # - "587:587"            # submission (STARTTLS), needs SMTPD_USERS
+      # - "465:465"            # smtps (implicit TLS), needs SMTPD_USERS
+      - "127.0.0.1:8080:8080"  # web UI, reachable only from this host
     volumes:
-      - ./certs:/ssl_certs
-      - ./keys:/dkim_keys
-      - ./tokens:/etc/tokens
+      - ./certs:/ssl_certs     # cert.pem / key.pem (self-signed if missing)
+      - ./tokens:/etc/tokens   # OAuth2 token files
+      - ./config:/config       # settings saved from the web UI
     environment:
       TIMEZONE: "Europe/Rome"
-      HOSTNAME: "smtp.example.com"
+      SMTP_HOSTNAME: "smtp.example.com"
       DOMAIN_NAME: "example.com"
       MY_NETWORK: "192.168.0.0/24"
       MESSAGE_SIZE_LIMIT: "10240000"
+      # Microsoft 365 relay
       AUTH_USER: "example@example.com"
-      DISABLE_SMTP_AUTH_ON_PORT_25: "false"
       RELAY_HOST: "smtp.office365.com"
       RELAY_HOST_PORT: "587"
-      CLIENT_ID: "your client id (id of the application created on Azure Entra ID)"
-      CLIENT_SECRET: "value (value) of the secure certs created for the application on Azure Entra ID"
       TENANT_ID: "your tenant id"
-    container_name: postfix
+      CLIENT_ID: "your client id (Application ID of the Entra ID app)"
+      CLIENT_SECRET: "client secret value of the Entra ID app"
+      # Optional SMTP AUTH for clients outside MY_NETWORK
+      SMTPD_USERS: ""          # "user@example.com:password,other@example.com:password"
+      DISABLE_SMTP_AUTH_ON_PORT_25: "false"
+      SASL_XOAUTH2_DEBUG: "false"
+      # Web UI
+      WEBUI_ENABLED: "true"
+      WEBUI_USER: "admin"
+      WEBUI_PASSWORD: ""       # required to start the web UI
